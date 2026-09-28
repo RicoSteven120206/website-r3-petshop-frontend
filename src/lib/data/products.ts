@@ -1,0 +1,132 @@
+import { Product } from "@/src/lib/types";
+
+export const products: Product[] = [
+  {
+    id: "p1",
+    slug: "dry-food-anjing-dewasa-10kg",
+    name: "Dry Food Anjing Dewasa 10kg",
+    categorySlug: "anjing",
+    price: 385000,
+    compareAtPrice: 450000,
+    rating: 4.7,
+    reviewCount: 128,
+    image: "https://picsum.photos/seed/prod-dogfood/600/600",
+    description:
+      "Makanan kering lengkap untuk anjing dewasa segala ras, diformulasikan dengan protein tinggi dan omega-3 untuk bulu yang sehat.",
+    stock: 24,
+    tags: ["makanan", "best-seller"],
+    isRecommended: true,
+  },
+  {
+    id: "p2",
+    slug: "cat-litter-gumpal-lavender-5l",
+    name: "Cat Litter Gumpal Aroma Lavender 5L",
+    categorySlug: "kucing",
+    price: 65000,
+    rating: 4.5,
+    reviewCount: 96,
+    image: "https://picsum.photos/seed/prod-catlitter/600/600",
+    description: "Pasir kucing gumpal dengan daya serap tinggi dan kontrol bau aroma lavender.",
+    stock: 50,
+    tags: ["kebersihan"],
+    isRecommended: true,
+  },
+  {
+    id: "p3",
+    slug: "kandang-burung-minimalis",
+    name: "Kandang Burung Minimalis Besi",
+    categorySlug: "burung",
+    price: 220000,
+    compareAtPrice: 275000,
+    rating: 4.3,
+    reviewCount: 41,
+    image: "https://picsum.photos/seed/prod-birdcage/600/600",
+    description: "Kandang burung berbahan besi anti karat, mudah dibersihkan, cocok untuk burung kecil-sedang.",
+    stock: 12,
+    tags: ["kandang"],
+    isRecommended: false,
+  },
+  {
+    id: "p4",
+    slug: "aquascape-starter-kit",
+    name: "Aquascape Starter Kit 40cm",
+    categorySlug: "ikan",
+    price: 540000,
+    rating: 4.8,
+    reviewCount: 63,
+    image: "https://picsum.photos/seed/prod-aquascape/600/600",
+    description: "Paket lengkap aquascape pemula: akuarium kaca 40cm, filter mini, dan substrat.",
+    stock: 8,
+    tags: ["akuarium", "best-seller"],
+    isRecommended: true,
+  },
+  {
+    id: "p5",
+    slug: "kandang-hamster-2-lantai",
+    name: "Kandang Hamster 2 Lantai",
+    categorySlug: "hewan-kecil",
+    price: 175000,
+    rating: 4.4,
+    reviewCount: 37,
+    image: "https://picsum.photos/seed/prod-hamster/600/600",
+    description: "Kandang akrilik 2 lantai lengkap dengan roda lari dan tempat makan.",
+    stock: 15,
+    tags: ["kandang"],
+    isRecommended: false,
+  },
+  {
+    id: "p6",
+    slug: "shampoo-anjing-anti-kutu",
+    name: "Shampoo Anjing Anti Kutu 250ml",
+    categorySlug: "anjing",
+    price: 48000,
+    rating: 4.6,
+    reviewCount: 210,
+    image: "https://picsum.photos/seed/prod-dogshampoo/600/600",
+    description: "Shampoo formula lembut yang efektif membasmi kutu dan menjaga kesehatan kulit anjing.",
+    stock: 40,
+    tags: ["grooming", "best-seller"],
+    isRecommended: true,
+  },
+  {
+    id: "p7",
+    slug: "mainan-kucing-tongkat-bulu",
+    name: "Mainan Kucing Tongkat Bulu",
+    categorySlug: "kucing",
+    price: 25000,
+    compareAtPrice: 35000,
+    rating: 4.2,
+    reviewCount: 84,
+    image: "https://picsum.photos/seed/prod-cattoy/600/600",
+    description: "Mainan interaktif untuk melatih insting berburu kucing, aman dan tahan lama.",
+    stock: 60,
+    tags: ["mainan"],
+    isRecommended: false,
+  },
+  {
+    id: "p8",
+    slug: "pakan-ikan-hias-serba-guna",
+    name: "Pakan Ikan Hias Serba Guna 100g",
+    categorySlug: "ikan",
+    price: 22000,
+    rating: 4.5,
+    reviewCount: 55,
+    image: "https://picsum.photos/seed/prod-fishfood/600/600",
+    description: "Pelet apung untuk berbagai jenis ikan hias, kaya nutrisi dan tidak mengeruhkan air.",
+    stock: 70,
+    tags: ["makanan"],
+    isRecommended: true,
+  },
+];
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}
+
+export function getProductsByCategory(categorySlug: string): Product[] {
+  return products.filter((p) => p.categorySlug === categorySlug);
+}
+
+export function getRecommendedProducts(): Product[] {
+  return products.filter((p) => p.isRecommended);
+}
